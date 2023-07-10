@@ -7,9 +7,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class Ocean1 {
 
-    @Qualifier("getIsland")
-    @Autowired
+
     private Island2 island;
+    @Autowired
+    public void Ocean1 (@Qualifier("getIsland") Island2 island) {
+        this.island = island;
+    }
 
     @Override
     public String toString() {
